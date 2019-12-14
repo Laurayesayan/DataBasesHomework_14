@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 class UserDefaultsPersistance {
     static let shared = UserDefaultsPersistance()
@@ -29,4 +30,47 @@ class UserDefaultsPersistance {
             UserDefaults.standard.string(forKey: kUserSecondNameKey)
         }
     }
+}
+
+class Tasks: Object {
+    @objc dynamic var task = ""
+}
+
+class RealmPersistance {
+    static let shared = RealmPersistance()
+    var addedTask = ""
+    var tasksList: [String] = []
+    
+    private let realm = try! Realm()
+
+    func recordTask() {
+        try! realm.write {
+            let task = Tasks()
+            task.task = addedTask
+            realm.add(task)
+        }
+        
+        for t in realm.objects(Tasks.self) {
+            tasksList.append(t.task)
+        }
+    }
+    
+    func deleteTask(toDelete: String) {
+        for task in realm.objects(Tasks.self) {
+            if toDelete == task.task {
+                try! realm.write {
+                    realm.delete(task)
+                }
+            }
+        }
+        
+        print(tasksList)
+        tasksList = []
+        for t in realm.objects(Tasks.self) {
+            tasksList.append(t.task)
+        }
+        print(tasksList)
+    }
+    
+
 }
