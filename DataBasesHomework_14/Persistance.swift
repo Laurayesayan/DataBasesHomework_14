@@ -38,20 +38,29 @@ class Tasks: Object {
 
 class RealmPersistance {
     static let shared = RealmPersistance()
-    var addedTask = ""
-    var tasksList: [String] = []
+    private var newTask = ""
+    private var tasksList: [String] = []
     
     private let realm = try! Realm()
+    
+    func getRecoordedTask() -> [String] {
+        tasksList = []
+        for t in realm.objects(Tasks.self) {
+            tasksList.append(t.task)
+        }
+        
+        return tasksList.reversed()
+    }
+    
+    func setTask(newTask: String) {
+        self.newTask = newTask
+    }
 
     func recordTask() {
         try! realm.write {
             let task = Tasks()
-            task.task = addedTask
+            task.task = newTask
             realm.add(task)
-        }
-        
-        for t in realm.objects(Tasks.self) {
-            tasksList.append(t.task)
         }
     }
     
@@ -64,12 +73,7 @@ class RealmPersistance {
             }
         }
         
-        print(tasksList)
         tasksList = []
-        for t in realm.objects(Tasks.self) {
-            tasksList.append(t.task)
-        }
-        print(tasksList)
     }
     
 

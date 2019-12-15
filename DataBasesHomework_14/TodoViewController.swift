@@ -9,28 +9,60 @@ class TodoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        todoTableView.allowsMultipleSelectionDuringEditing = true
+        updateTasksList()
     }
-    @IBAction func removeTask(_ sender: Any) {
-        RealmPersistance.shared.deleteTask(toDelete: tasksList[0])
+    
+    func removeTask(task: String) {
+        RealmPersistance.shared.deleteTask(toDelete: task)
+    }
+    
+    @IBAction func deleteRows(_ sender: Any) {
+        if let selectedRows = todoTableView.indexPathsForSelectedRows {
 
-        todoTableView.reloadData()
+            var items: [String] = []
+            for indexPath in selectedRows  {
+                items.append(tasksList[indexPath.row])
+            }
+
+            for item in items {
+                if let index = tasksList.firstIndex(of: item) {
+                    removeTask(task: tasksList[index])
+                    tasksList.remove(at: index)
+                }
+            }
+
+            todoTableView.beginUpdates()
+            todoTableView.deleteRows(at: selectedRows, with: .automatic)
+            todoTableView.endUpdates()
+        }
+        
+        todoTableView.isEditing = false
+        updateTasksList()
+    }
+    
+    func updateTasksList() {
+        tasksList = RealmPersistance.shared.getRecoordedTask()
+    }
+    
+    @IBAction func onEditingMode(_ sender: Any) {
+        todoTableView.isEditing = !isEditing
     }
     
     @IBAction func addNewTask(_ sender: Any) {
         if let newTask = newTaskTextField.text {
-            RealmPersistance.shared.addedTask = newTask
+            RealmPersistance.shared.setTask(newTask: newTask)
         }
      
         RealmPersistance.shared.recordTask()
 
-        tasksList = RealmPersistance.shared.tasksList
-
+        updateTasksList()
+        
         todoTableView.reloadData()
         
         newTaskTextField.text = ""
-
     }
-    
+
 }
 
 extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
