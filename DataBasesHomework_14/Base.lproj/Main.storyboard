@@ -68,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="xkp-Ek-VTb">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WfS-O5-boR">
@@ -85,39 +85,18 @@
                                                 <action selector="addNewTask:" destination="ZCG-yw-De9" eventType="touchUpInside" id="Frb-QC-c0G"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jr4-kv-Wbh">
-                                            <rect key="frame" x="8" y="61" width="30" height="30"/>
-                                            <state key="normal" title="Edit"/>
-                                            <connections>
-                                                <action selector="onEditingMode:" destination="ZCG-yw-De9" eventType="touchUpInside" id="l4x-ji-Voe"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCi-xL-RGo">
-                                            <rect key="frame" x="104" y="61" width="166" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="166" id="9ER-fI-xrI"/>
-                                            </constraints>
-                                            <state key="normal" title="Delete selected"/>
-                                            <connections>
-                                                <action selector="deleteRows:" destination="ZCG-yw-De9" eventType="touchUpInside" id="xKI-u1-cbu"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstItem="WfS-O5-boR" firstAttribute="centerY" secondItem="dGq-CN-IV5" secondAttribute="centerY" id="1Da-xp-rCf"/>
                                         <constraint firstAttribute="trailing" secondItem="dGq-CN-IV5" secondAttribute="trailing" constant="8" id="4Iu-Nz-wo4"/>
-                                        <constraint firstItem="pCi-xL-RGo" firstAttribute="top" secondItem="WfS-O5-boR" secondAttribute="bottom" constant="7" id="5dx-Pa-IyO"/>
-                                        <constraint firstItem="pCi-xL-RGo" firstAttribute="trailing" secondItem="dGq-CN-IV5" secondAttribute="trailing" constant="-97" id="6pv-OL-CEd"/>
                                         <constraint firstItem="WfS-O5-boR" firstAttribute="leading" secondItem="xkp-Ek-VTb" secondAttribute="leadingMargin" id="CHu-gp-mjI"/>
                                         <constraint firstItem="dGq-CN-IV5" firstAttribute="top" secondItem="xkp-Ek-VTb" secondAttribute="top" constant="25" id="oH6-4q-DAY"/>
-                                        <constraint firstItem="jr4-kv-Wbh" firstAttribute="baseline" secondItem="pCi-xL-RGo" secondAttribute="baseline" id="poz-mQ-Wxe"/>
-                                        <constraint firstItem="jr4-kv-Wbh" firstAttribute="leading" secondItem="WfS-O5-boR" secondAttribute="leading" id="yNQ-Li-rLK"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TodoCell" id="yUs-yD-ORC" customClass="TodoTableViewCell" customModule="DataBasesHomework_14" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="127" width="375" height="43"/>
+                                        <rect key="frame" x="0.0" y="102" width="375" height="43"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yUs-yD-ORC" id="218-DE-wGf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -178,7 +157,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="iVj-8V-Hrd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uvy-zn-VRg">
@@ -195,42 +174,26 @@
                                                 <action selector="addNewTask:" destination="2bu-Ax-Nbr" eventType="touchUpInside" id="ZJU-sA-DJF"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4h-aS-Bhd">
-                                            <rect key="frame" x="104" y="61" width="166" height="30"/>
-                                            <state key="normal" title="Delete selected"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GR-qa-uJm">
-                                            <rect key="frame" x="8" y="61" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="phN-fL-CYX"/>
-                                            </constraints>
-                                            <state key="normal" title="Edit"/>
-                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
-                                        <constraint firstItem="U4h-aS-Bhd" firstAttribute="leading" secondItem="7GR-qa-uJm" secondAttribute="trailing" constant="66" id="40i-Oi-6bX"/>
+                                        <constraint firstItem="uvy-zn-VRg" firstAttribute="centerY" secondItem="iVj-8V-Hrd" secondAttribute="centerY" id="4hP-2t-ffT"/>
                                         <constraint firstItem="kCK-1P-1nE" firstAttribute="leading" secondItem="uvy-zn-VRg" secondAttribute="trailing" constant="19" id="5yz-le-dAl"/>
-                                        <constraint firstItem="uvy-zn-VRg" firstAttribute="leading" secondItem="7GR-qa-uJm" secondAttribute="leading" id="6It-le-p8d"/>
-                                        <constraint firstItem="7GR-qa-uJm" firstAttribute="bottom" secondItem="iVj-8V-Hrd" secondAttribute="bottomMargin" id="6qJ-Pg-v0a"/>
                                         <constraint firstItem="kCK-1P-1nE" firstAttribute="trailing" secondItem="iVj-8V-Hrd" secondAttribute="trailingMargin" id="Bee-HR-aVn"/>
-                                        <constraint firstItem="7GR-qa-uJm" firstAttribute="top" secondItem="uvy-zn-VRg" secondAttribute="bottom" constant="7" id="DGO-p6-n7Y"/>
                                         <constraint firstItem="kCK-1P-1nE" firstAttribute="top" secondItem="iVj-8V-Hrd" secondAttribute="top" constant="23" id="P2Z-9j-0JA"/>
-                                        <constraint firstItem="7GR-qa-uJm" firstAttribute="baseline" secondItem="U4h-aS-Bhd" secondAttribute="baseline" id="SY7-p4-wdu"/>
                                         <constraint firstItem="uvy-zn-VRg" firstAttribute="leading" secondItem="iVj-8V-Hrd" secondAttribute="leadingMargin" id="ZB0-RJ-mqX"/>
-                                        <constraint firstItem="U4h-aS-Bhd" firstAttribute="centerX" secondItem="iVj-8V-Hrd" secondAttribute="centerX" id="x9n-Yp-XtB"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoreDataCell" id="rRm-hW-Mbe" customClass="CoreDataTableViewCell" customModule="DataBasesHomework_14" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="127" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="102" width="375" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rRm-hW-Mbe" id="BIb-dC-h7R">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-tW-q88">
-                                                    <rect key="frame" x="15" y="11" width="345" height="21.5"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

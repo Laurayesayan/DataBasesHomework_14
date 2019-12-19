@@ -9,7 +9,6 @@ class TodoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        todoTableView.allowsMultipleSelectionDuringEditing = true
         updateTasksList()
     }
     
@@ -17,36 +16,8 @@ class TodoViewController: UIViewController {
         RealmPersistance.shared.deleteTask(toDelete: task)
     }
     
-    @IBAction func deleteRows(_ sender: Any) {
-        if let selectedRows = todoTableView.indexPathsForSelectedRows {
-
-            var items: [String] = []
-            for indexPath in selectedRows  {
-                items.append(tasksList[indexPath.row])
-            }
-
-            for item in items {
-                if let index = tasksList.firstIndex(of: item) {
-                    removeTask(task: tasksList[index])
-                    tasksList.remove(at: index)
-                }
-            }
-
-            todoTableView.beginUpdates()
-            todoTableView.deleteRows(at: selectedRows, with: .automatic)
-            todoTableView.endUpdates()
-        }
-        
-        todoTableView.isEditing = false
-        updateTasksList()
-    }
-    
     func updateTasksList() {
         tasksList = RealmPersistance.shared.getRecoordedTask()
-    }
-    
-    @IBAction func onEditingMode(_ sender: Any) {
-        todoTableView.isEditing = !isEditing
     }
     
     @IBAction func addNewTask(_ sender: Any) {
@@ -77,6 +48,14 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         
         return cell
     }
-
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let data = tasksList[indexPath.row]
+            removeTask(task: data)
+            updateTasksList()
+            todoTableView.reloadData()
+        }
+    }
 
 }

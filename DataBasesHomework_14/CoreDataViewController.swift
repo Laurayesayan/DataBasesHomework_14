@@ -15,7 +15,6 @@ class CoreDataViewController: UIViewController {
     
     @IBOutlet weak var newTaskTextField: UITextField!
     
-    var tasksList: [String] = []
     var coreDataTasksList = [NSManagedObject]()
     
     override func viewDidLoad() {
@@ -25,7 +24,6 @@ class CoreDataViewController: UIViewController {
     
     @IBAction func addNewTask(_ sender: Any) {
         if let newTask = newTaskTextField.text {
-//            tasksList.append(newTask)
             saveToCoreData(task: newTask)
             coreDataTableView.reloadData()
             newTaskTextField.text = ""
@@ -67,8 +65,38 @@ class CoreDataViewController: UIViewController {
         do {
             try managedContext.save()
             coreDataTasksList.append(tasks)
+            coreDataTasksList.reverse()
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func removeTaskFromDataCore(taskToDelete: String) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+
+        let requestToDelete = NSFetchRequest<NSFetchRequestResult>(entityName: "Tasks2")
+
+        requestToDelete.returnsObjectsAsFaults = false
+
+        requestToDelete.predicate = NSPredicate(format: "task2 = %@", "\(taskToDelete)")
+        
+        do {
+            let removingObjects = try managedContext.fetch(requestToDelete)
+            for object in removingObjects as! [NSManagedObject] {
+                managedContext.delete(object)
+            }
+        } catch {
+            print("Could not delete")
+        }
+        
+        do {
+            try managedContext.save()
+        } catch {
+            print("Could not save deleted process")
         }
     }
 }
@@ -80,12 +108,19 @@ extension CoreDataViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = coreDataTableView.dequeueReusableCell(withIdentifier: "CoreDataCell") as! CoreDataTableViewCell
-        
-//        cell.coreDataLabel.text = tasksList[indexPath.row]
+
         cell.coreDataLabel.text = coreDataTasksList[indexPath.row].value(forKey: "task2") as? String
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let data = coreDataTasksList[indexPath.row].value(forKey: "task2") as! String
+            removeTaskFromDataCore(taskToDelete: data)
+            viewWillAppear(true)
+            coreDataTableView.reloadData()
+        }
+    }
     
 }
