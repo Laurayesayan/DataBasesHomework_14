@@ -20,6 +20,10 @@
 		F718354323A5496600D0A2E9 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718354223A5496600D0A2E9 /* TodoTableViewCell.swift */; };
 		F718354923A963CB00D0A2E9 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718354823A963CB00D0A2E9 /* CoreDataViewController.swift */; };
 		F718354B23A9647B00D0A2E9 /* CoreDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718354A23A9647B00D0A2E9 /* CoreDataTableViewCell.swift */; };
+		F718354E23AE8E7D00D0A2E9 /* WeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718354C23AE8E7D00D0A2E9 /* WeatherLoader.swift */; };
+		F718354F23AE8E7D00D0A2E9 /* WeatherDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718354D23AE8E7D00D0A2E9 /* WeatherDict.swift */; };
+		F718355123AE8FC500D0A2E9 /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718355023AE8FC500D0A2E9 /* AlamofireViewController.swift */; };
+		F718355323AE902300D0A2E9 /* AlamofireWeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F718355223AE902300D0A2E9 /* AlamofireWeatherTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		F718354223A5496600D0A2E9 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		F718354823A963CB00D0A2E9 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		F718354A23A9647B00D0A2E9 /* CoreDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTableViewCell.swift; sourceTree = "<group>"; };
+		F718354C23AE8E7D00D0A2E9 /* WeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherLoader.swift; sourceTree = "<group>"; };
+		F718354D23AE8E7D00D0A2E9 /* WeatherDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDict.swift; sourceTree = "<group>"; };
+		F718355023AE8FC500D0A2E9 /* AlamofireViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
+		F718355223AE902300D0A2E9 /* AlamofireWeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireWeatherTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +106,12 @@
 				F718354023A548F800D0A2E9 /* TodoViewController.swift */,
 				F718353E23A2C3AA00D0A2E9 /* Persistance.swift */,
 				F718352D23A2BE5F00D0A2E9 /* Main.storyboard */,
+				F718355223AE902300D0A2E9 /* AlamofireWeatherTableViewCell.swift */,
 				F718354A23A9647B00D0A2E9 /* CoreDataTableViewCell.swift */,
 				F718354823A963CB00D0A2E9 /* CoreDataViewController.swift */,
+				F718354D23AE8E7D00D0A2E9 /* WeatherDict.swift */,
+				F718355023AE8FC500D0A2E9 /* AlamofireViewController.swift */,
+				F718354C23AE8E7D00D0A2E9 /* WeatherLoader.swift */,
 				F718354223A5496600D0A2E9 /* TodoTableViewCell.swift */,
 				F718353323A2BE6000D0A2E9 /* Assets.xcassets */,
 				F718353523A2BE6000D0A2E9 /* LaunchScreen.storyboard */,
@@ -229,9 +241,13 @@
 				F718354923A963CB00D0A2E9 /* CoreDataViewController.swift in Sources */,
 				F718352C23A2BE5F00D0A2E9 /* ViewController.swift in Sources */,
 				F718352823A2BE5F00D0A2E9 /* AppDelegate.swift in Sources */,
+				F718355323AE902300D0A2E9 /* AlamofireWeatherTableViewCell.swift in Sources */,
 				F718352A23A2BE5F00D0A2E9 /* SceneDelegate.swift in Sources */,
 				F718353F23A2C3AA00D0A2E9 /* Persistance.swift in Sources */,
+				F718355123AE8FC500D0A2E9 /* AlamofireViewController.swift in Sources */,
+				F718354E23AE8E7D00D0A2E9 /* WeatherLoader.swift in Sources */,
 				F718354123A548F800D0A2E9 /* TodoViewController.swift in Sources */,
+				F718354F23AE8E7D00D0A2E9 /* WeatherDict.swift in Sources */,
 				F718353223A2BE5F00D0A2E9 /* DataBasesHomework_14.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
