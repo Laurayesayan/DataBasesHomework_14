@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rZm-49-pse">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ha9-8z-WYR">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DataBasesHomework_14" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,6 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lAt-mF-Mp7"/>
                     <connections>
                         <outlet property="firstNameTextField" destination="NUe-m3-4sd" id="Tdi-uc-11l"/>
                         <outlet property="secondNameTextField" destination="3dP-PR-yP5" id="aXj-BA-Xns"/>
@@ -54,9 +55,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1076" y="138.0809595202399"/>
         </scene>
-        <!--Todo View Controller-->
+        <!--Item-->
         <scene sceneID="7US-dK-CtV">
             <objects>
                 <viewController id="ZCG-yw-De9" customClass="TodoViewController" customModule="DataBasesHomework_14" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f47-HD-9Pj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="xkp-Ek-VTb">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
@@ -136,6 +137,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3hn-Ya-o8e"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="49N-T3-yVe"/>
                     <connections>
                         <outlet property="newTaskTextField" destination="WfS-O5-boR" id="qs1-Wf-Ul1"/>
                         <outlet property="todoTableView" destination="f47-HD-9Pj" id="WZT-8f-tiQ"/>
@@ -143,9 +145,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X18-7q-Yhz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="137.18140929535232"/>
+            <point key="canvasLocation" x="1903.2" y="137.18140929535232"/>
         </scene>
-        <!--Core Data View Controller-->
+        <!--Item-->
         <scene sceneID="2K7-eW-Eeh">
             <objects>
                 <viewController id="2bu-Ax-Nbr" customClass="CoreDataViewController" customModule="DataBasesHomework_14" customModuleProvider="target" sceneMemberID="viewController">
@@ -154,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gLU-Ty-YO6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="iVj-8V-Hrd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
@@ -225,6 +227,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VCG-ML-md8"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="39b-oI-DxR"/>
                     <connections>
                         <outlet property="coreDataTableView" destination="gLU-Ty-YO6" id="2E9-mb-l3Z"/>
                         <outlet property="newTaskTextField" destination="uvy-zn-VRg" id="mgT-BB-aLl"/>
@@ -232,18 +235,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opG-np-cJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1776.8" y="137.18140929535232"/>
+            <point key="canvasLocation" x="2716" y="137.18140929535232"/>
         </scene>
         <!--Alamofire-->
         <scene sceneID="DxF-8d-JcM">
             <objects>
-                <viewController id="rZm-49-pse" customClass="AlamofireViewController" customModule="JSONParsingHomework_12" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rZm-49-pse" customClass="AlamofireViewController" customModule="DataBasesHomework_14" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZM6-Rf-sxm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="154" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="k6w-5Y-2eY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="vZc-YJ-uVR">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="149"/>
@@ -295,7 +298,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlamofireCell" id="dJF-aA-gcg" customClass="AlamofireWeatherTableViewCell" customModule="JSONParsingHomework_12" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlamofireCell" id="dJF-aA-gcg" customClass="AlamofireWeatherTableViewCell" customModule="DataBasesHomework_14" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="177" width="375" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dJF-aA-gcg" id="2lP-IP-7PA">
@@ -390,7 +393,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5LD-uA-ck5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2650" y="138"/>
+            <point key="canvasLocation" x="3588" y="137.18140929535232"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xbL-gW-gbf">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ha9-8z-WYR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2s1-vb-dpI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ZCG-yw-De9" kind="relationship" relationship="viewControllers" id="V62-mU-J6P"/>
+                        <segue destination="2bu-Ax-Nbr" kind="relationship" relationship="viewControllers" id="waz-oT-uNn"/>
+                        <segue destination="rZm-49-pse" kind="relationship" relationship="viewControllers" id="fFm-0G-3Kk"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="cPx-tC-hrB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvt-Fs-hCn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
 </document>
