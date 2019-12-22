@@ -115,7 +115,6 @@ class WeatherPersistance {
             
             realm.add(weather)
         }
-        
     }
     
     func getRecordedWeather() -> [WeatherDict] {
@@ -132,6 +131,10 @@ class WeatherPersistance {
         try! realm.write {
             realm.deleteAll()
         }
+    }
+    
+    func isEmpty() -> Bool {
+        return realm.objects(Weather.self).isEmpty
     }
     
 }

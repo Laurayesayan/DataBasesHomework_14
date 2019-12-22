@@ -26,25 +26,35 @@ class AlamofireViewController: UIViewController {
     var weatherForOneDay = WeatherDict()
     let name = "Moscow"
     
+    override func viewWillAppear(_ animated: Bool) {
+        if !WeatherPersistance.shared.isEmpty() {
+            self.weatherDicts = WeatherPersistance.shared.getRecordedWeather()
+            self.weatherForOneDay = self.weatherDicts.remove(at: 0)
+            self.addDailyWeather()
+            
+            self.alamofireWeatherTableView.reloadData()
+            
+            WeatherPersistance.shared.deleteAllWeather()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        WeatherPersistance.shared.deleteAllWeather()
-        
-//        WeatherLoader().loadWeatherWithAlamofire { weatherDict in
-//            self.weatherForOneDay = weatherDict
-//            self.addDailyWeather()
-//        }
-        
-//        WeatherPersistance.shared.setWeather(newWeather: self.weatherForOneDay)
-//        WeatherPersistance.shared.recordWeather()
-        self.weatherForOneDay = WeatherPersistance.shared.getRecordedWeather()[0]
-        self.addDailyWeather()
-        
-//        WeatherLoader().loadWeatherFor5DaysWithAlamofire { weatherDicts in
-//            self.weatherDicts = weatherDicts
-//            self.alamofireWeatherTableView.reloadData()
-//        }
+
+        WeatherLoader().loadWeatherWithAlamofire { weatherDict in
+            self.weatherForOneDay = weatherDict
+            self.addDailyWeather()
+            self.recordWeather(newWeather: self.weatherForOneDay)
+        }
+
+        WeatherLoader().loadWeatherFor5DaysWithAlamofire { weatherDicts in
+            self.weatherDicts = weatherDicts
+            self.alamofireWeatherTableView.reloadData()
+
+            for weather in self.weatherDicts {
+                self.recordWeather(newWeather: weather)
+            }
+        }
         
     }
     
@@ -69,6 +79,12 @@ class AlamofireViewController: UIViewController {
         humidityLabel.text = String(main.humidity) + " %"
         temperatureLabel.text = String(round(main.temperature - 273.15)) + " °C"
         pressureLabel.text = String(round(Double(main.pressure * 100) / 133.322)) + " mmHg"
+        
+    }
+    
+    func recordWeather(newWeather: WeatherDict) {
+        WeatherPersistance.shared.setWeather(newWeather: newWeather)
+        WeatherPersistance.shared.recordWeather()
     }
 
 }
